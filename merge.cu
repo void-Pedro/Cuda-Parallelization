@@ -75,7 +75,7 @@ int main(void) {
     char *d_data = NULL;
     char *auxArr = NULL;
 
-    FILE *file = fopen("quicksort.in", "r");
+    FILE *file = fopen("sort.in", "r");
     if (!file) {
         perror("Error opening file");
         exit(EXIT_FAILURE);
@@ -123,7 +123,7 @@ int main(void) {
     char *results_h = (char *)malloc(num_items * MAX_STRING_SIZE);
     cudaMemcpy(results_h, d_data, num_items * MAX_STRING_SIZE, cudaMemcpyDeviceToHost);
 
-    FILE *out_file = fopen("quicksort.out", "w");
+    FILE *out_file = fopen("sort.out", "w");
     if (!out_file) {
         perror("Error opening output file");
         exit(EXIT_FAILURE);
